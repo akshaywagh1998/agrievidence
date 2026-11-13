@@ -1,0 +1,33 @@
+// Capture an actual browser walkthrough. Captions belong to the recording only.
+import {chromium} from '@playwright/test';
+import fs from 'node:fs/promises';
+const url=process.argv[2]||'http://127.0.0.1:8080';
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
+const context=await browser.newContext({viewport:{width:1440,height:1000},recordVideo:{dir:'evidence/raw',size:{width:1440,height:1000}}});
+const page=await context.newPage();
+await page.goto(url);await page.locator('.claim').first().waitFor();
+await page.evaluate(()=>{const s=document.createElement('div');s.id='recording-caption';Object.assign(s.style,{position:'fixed',bottom:'12px',left:'10%',width:'80%',padding:'14px 20px',background:'#133b32',color:'white',font:'600 20px/1.4 system-ui',textAlign:'center',borderRadius:'8px',zIndex:'10000',boxShadow:'0 3px 20px #0003'});document.body.append(s);});
+async function caption(text,ms=6500){await page.locator('#recording-caption').evaluate((el,t)=>el.textContent=t,text);await page.waitForTimeout(ms);}
+await caption('AgriEvidence • Follow the source. A local-first workspace for soil and water research.');
+await caption('These examples are SYNTHETIC. Source statements are unverified, never official guidance.');
+await page.locator('.evidence').scrollIntoViewIfNeeded();
+await caption('The free baseline uses literal search, not AI. Every excerpt has a source and line locator.');
+await page.locator('.claim').first().getByText('Inspect original source').click();
+await caption('Inspect the original numbered lines. An exact quote is evidence of what a source says—not proof it is true.');
+await page.getByRole('button',{name:'carbon credits',exact:true}).click();
+await caption('No evidence for carbon credits? We say so. No unsupported answer is invented.');
+await page.getByRole('button',{name:'soil monitoring',exact:true}).click();
+const brief=page.waitForEvent('download');await page.locator('#brief').click();await (await brief).saveAs('evidence/example-brief.md');
+await caption('Download the current research brief: exact excerpts, synthetic labels and a complete reference index.');
+await page.locator('[data-event="1"]').check();
+const ics=page.waitForEvent('download');await page.locator('#ics').click();await (await ics).saveAs('evidence/example-dates.ics');
+await caption('Review dates before selecting them. ICS reminders are all-day; date mentions are not precise cutoff times.');
+await page.locator('#title').fill('SYNTHETIC • My field note');await page.locator('#source-text').fill('SYNTHETIC demonstration note.\nSoil monitoring visit: 2026-12-20.');await page.locator('#synthetic').check();await page.locator('#authorized').check();await page.getByRole('button',{name:'Add to library'}).click();
+await caption('Paste or upload authorized plain text. Imports stay in this tab and disappear on refresh.');
+await page.locator('.model summary').click();await page.locator('.model').scrollIntoViewIfNeeded();
+await caption('Optional local Ollama can select source lines. Strict validation rejects invented citations or altered quotes.');
+await caption('No actual model inference is shown here. Model tests use mocks; this recording shows the real no-key baseline.');
+await page.evaluate(()=>window.scrollTo({top:0,behavior:'smooth'}));
+await caption('Student enrollment confirmed. Final GenHacks rules acceptance, video hosting and submission remain personal steps.');
+await caption('MIT licensed • AI assistance disclosed • github.com/akshaywagh1998/agrievidence');
+const video=page.video();await context.close();await fs.rename(await video.path(),'evidence/demo.webm');await browser.close();

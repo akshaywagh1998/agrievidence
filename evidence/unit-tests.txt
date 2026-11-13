@@ -1,0 +1,24 @@
+
+> agrievidence@1.0.0 test
+> node --test tests/*.test.js
+
+✔ source index retains nonempty line locators and provenance (1.878095ms)
+✔ literal case-insensitive AND search, unsupported question refuses (0.582929ms)
+✔ dates validate actual day and distinguish deadline from mention (1.055222ms)
+✔ malformed input and bounds fail clearly (0.433469ms)
+✔ HTML untrusted text is escaped (0.349178ms)
+✔ brief escapes active markup and includes provenance/refusal (0.388182ms)
+✔ ICS prevents property injection and folds UTF-8 to 75 octets (1.309316ms)
+✔ exact model citations accepted; empty evidence is allowed (0.84004ms)
+✔ hallucinated locator, modified quote, duplicate and extra prose rejected (1.803775ms)
+✔ prompt injection source remains data and cannot authorize invented claims (0.963244ms)
+✔ mocked model transport success validates and failure never silently falls back (0.506936ms)
+✔ model request size and model name are bounded (0.255177ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 92.836804

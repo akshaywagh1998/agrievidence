@@ -1,0 +1,33 @@
+
+> agrievidence@1.0.0 test:browser
+> playwright test
+
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:45] "GET / HTTP/1.1" 200 -
+
+Running 3 tests using 1 worker
+
+(node:1474) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:46] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:46] "GET /style.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:46] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:46] "GET /core.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:46] "GET /fixtures/synthetic.json HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:47] code 404, message File not found
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:47] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:47] "GET / HTTP/1.1" 304 -
+  ✓  1 tests/browser/workspace.spec.js:3:1 › no-key evidence workflow, upload, refusals and both exports (1.4s)
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:48] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:48] "GET /style.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:48] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:48] "GET /core.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:48] "GET /fixtures/synthetic.json HTTP/1.1" 200 -
+  ✓  2 tests/browser/workspace.spec.js:26:1 › mobile has no horizontal overflow and supports paste (823ms)
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:49] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:49] "GET /style.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:49] "GET /app.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:49] "GET /core.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [13/Nov/2026 07:16:49] "GET /fixtures/synthetic.json HTTP/1.1" 200 -
+  ✓  3 tests/browser/workspace.spec.js:32:1 › model citation attack fails visibly; mocked valid output labeled model (674ms)
+
+  3 passed (4.0s)

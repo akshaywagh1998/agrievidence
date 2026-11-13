@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AgriEvidence//Evidence Calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:20261210-0@agrievidence.local
+DTSTAMP:20261113T000000Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:SYNTHETIC • possible deadline • SYNTHETIC • Watershed microgr
+ ant notice
+DESCRIPTION:Application deadline: 2026-12-10. [S2:L3] — unverified source
+  statement\; check original.
+END:VEVENT
+END:VCALENDAR
