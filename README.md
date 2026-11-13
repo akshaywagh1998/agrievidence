@@ -1,6 +1,6 @@
 # AgriEvidence
 
-**GenHacks entry candidate for Akshay Wagh (India), who has confirmed current student enrollment.** Final account/rules review and personal submission steps remain; this is not a submitted entry. No registration, rule acceptance or submission has been performed.
+**GenHacks entry candidate for Akshay Wagh (India).** Final account/rules review and personal submission steps remain; this is not a submitted entry. No registration, rule acceptance or submission has been performed.
 
 A local-first research workspace for **small soil/water monitoring corpora**. Paste or upload authorized plain-text notes, find exact cited excerpts, inspect original numbered lines, export a Markdown brief with a reference index, and review date mentions before downloading an all-day ICS calendar. Unsupported searches return no evidence; the app does not compose unsupported factual answers.
 
